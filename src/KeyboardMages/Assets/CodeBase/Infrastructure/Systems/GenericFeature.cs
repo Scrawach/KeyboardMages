@@ -13,6 +13,6 @@ namespace CodeBase.Infrastructure.Systems
             Add(_systems.Create<TSystem>());
 
         public Entitas.Systems Add<TSystem>(params object[] args) where TSystem : ISystem => 
-            Add(_systems.Create<TSystem>());
+            Add(_systems.Create<TSystem>(args));
     }
 }
