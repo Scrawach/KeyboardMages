@@ -1,4 +1,6 @@
+using CodeBase.Infrastructure.Systems;
 using NUnit.Framework;
+using Zenject;
 
 namespace Tests.EditMode.Infrastructure.Systems
 {
@@ -8,9 +10,9 @@ namespace Tests.EditMode.Infrastructure.Systems
         public void WhenCreateSystem_ThenShouldReturnSystem()
         {
             // arrange
-            
+
             // act
-            
+
             // assert
         }
     }
