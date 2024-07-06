@@ -22,6 +22,30 @@ namespace Tests.EditMode.Infrastructure.Systems
             system.Should().BeOfType<MockedSystem>();
         }
 
+        [Test]
+        public void WhenCreateSystem_WithExternalArguments_ThenShouldReturnSystem_WithTheseArguments()
+        {
+            // arrange 
+            var systems = new SystemFactory(new DiContainer());
+            var expected = 25;
+            
+            // act
+            var system = systems.Create<MockedSystemWithArguments>(expected);
+            
+            // assert
+            system.Should().NotBeNull();
+            system.Should().BeOfType<MockedSystemWithArguments>();
+            system.Value.Should().Be(expected);
+        }
+
         public class MockedSystem : ISystem { }
+
+        public class MockedSystemWithArguments : ISystem
+        {
+            public int Value { get; }
+            
+            public MockedSystemWithArguments(int value) => 
+                Value = value;
+        }
     }
 }
