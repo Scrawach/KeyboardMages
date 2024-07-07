@@ -1,3 +1,4 @@
+using System;
 using CodeBase.Infrastructure.Systems;
 using Entitas;
 using FluentAssertions;
@@ -36,6 +37,19 @@ namespace Tests.EditMode.Infrastructure.Systems
             system.Should().NotBeNull();
             system.Should().BeOfType<MockedSystemWithArguments>();
             system.Value.Should().Be(expected);
+        }
+
+        [Test]
+        public void WhenCreateSystem_AndCantDoIt_ThenShouldThrowZenjectException()
+        {
+            // arrange
+            var systems = new SystemFactory(new DiContainer());
+            
+            // act
+            Action act = () => systems.Create<MockedSystemWithArguments>();
+            
+            // assert
+            act.Should().Throw<ZenjectException>();
         }
 
         public class MockedSystem : ISystem { }
