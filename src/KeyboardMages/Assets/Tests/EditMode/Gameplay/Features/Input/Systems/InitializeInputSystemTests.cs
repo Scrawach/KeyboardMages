@@ -11,13 +11,14 @@ namespace Tests.EditMode.Gameplay.Features.Input.Systems
         public void WhenInitialize_ThenShouldCreateEntity_WithInputComponent()
         {
             // arrange
-            var system = new InitializeInputSystem();
+            var contexts = new Contexts();
+            var system = new InitializeInputSystem(contexts.input);
             
             // act
             system.Initialize();
             
             // assert
-            var entities = Contexts.sharedInstance.input.GetEntities();
+            var entities = contexts.input.GetEntities();
             
             entities.Should().NotBeEmpty();
             entities.Single().isInput.Should().BeTrue();
