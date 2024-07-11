@@ -16,9 +16,10 @@ namespace Tests.EditMode.Gameplay.Features.Input.Systems
             // arrange
             var axis = new Vector2(25f, 25f);
             var mockedInput = new MockedInput(true, axis);
+            var contexts = new Contexts();
             
-            var emitInputSystem = new EmitInputSystem(Contexts.sharedInstance.input, mockedInput);
-            CreateInputEntity.Empty().isInput = true;
+            var emitInputSystem = new EmitInputSystem(contexts.input, mockedInput);
+            contexts.input.CreateEntity().isInput = true;
 
             // act
             emitInputSystem.Execute();
@@ -27,6 +28,8 @@ namespace Tests.EditMode.Gameplay.Features.Input.Systems
             var entities = Contexts.sharedInstance.input.GetEntities();
 
             entities.Should().NotBeEmpty();
+            entities.Single().isInput.Should().BeTrue();
+            entities.Single().axisInput.Should().Be(axis);
         }
         
         public class MockedInput : IInput
