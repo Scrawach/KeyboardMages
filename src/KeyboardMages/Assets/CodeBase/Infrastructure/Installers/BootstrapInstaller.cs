@@ -7,8 +7,9 @@ namespace CodeBase.Infrastructure.Installers
     {
         public override void InstallBindings()
         {
-            Container.BindInfrastructure();
+            Container.BindInputs();
             Container.BindContexts();
+            Container.BindInfrastructure();
         }
     }
 }
