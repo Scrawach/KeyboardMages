@@ -1,7 +1,7 @@
 using CodeBase.Gameplay.Features.Input.Service;
 using Zenject;
 
-namespace CodeBase.Infrastructure.Installers.Extensions
+namespace CodeBase.Infrastructure.Installers.Bootstrap.Bindings
 {
     public static class InputExtensions
     {

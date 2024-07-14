@@ -1,7 +1,7 @@
-using CodeBase.Infrastructure.Installers.Extensions;
+using CodeBase.Infrastructure.Installers.Bootstrap.Bindings;
 using Zenject;
 
-namespace CodeBase.Infrastructure.Installers
+namespace CodeBase.Infrastructure.Installers.Bootstrap
 {
     public class BootstrapInstaller : MonoInstaller
     {

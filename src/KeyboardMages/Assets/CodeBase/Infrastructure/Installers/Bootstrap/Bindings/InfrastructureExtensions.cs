@@ -1,7 +1,7 @@
 using CodeBase.Infrastructure.Systems;
 using Zenject;
 
-namespace CodeBase.Infrastructure.Installers.Extensions
+namespace CodeBase.Infrastructure.Installers.Bootstrap.Bindings
 {
     public static class InfrastructureExtensions
     {
