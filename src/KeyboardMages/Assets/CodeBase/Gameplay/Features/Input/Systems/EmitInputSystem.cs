@@ -5,12 +5,12 @@ namespace CodeBase.Gameplay.Features.Input.Systems
 {
     public class EmitInputSystem : IExecuteSystem
     {
-        private readonly IInput _input;
+        private readonly IInput _inputService;
         private readonly IGroup<InputEntity> _inputs;
 
         public EmitInputSystem(InputContext input, IInput inputService)
         {
-            _input = inputService;
+            _inputService = inputService;
             _inputs = input.GetGroup(InputMatcher.Input);
         }
 
@@ -18,8 +18,8 @@ namespace CodeBase.Gameplay.Features.Input.Systems
         {
             foreach (var input in _inputs)
             {
-                if (_input.HasAxis)
-                    input.ReplaceAxisInput(input.AxisInput);
+                if (_inputService.HasAxis)
+                    input.ReplaceAxisInput(_inputService.Axis);
                 else if (input.hasAxisInput)
                     input.RemoveAxisInput();
             }
