@@ -25,11 +25,13 @@ namespace Tests.EditMode.Gameplay.Features.Input.Systems
             emitInputSystem.Execute();
 
             // assert
-            var entities = Contexts.sharedInstance.input.GetEntities();
-
+            var entities = contexts.input.GetEntities();
+            var entity = entities.Single();
+            
             entities.Should().NotBeEmpty();
-            entities.Single().isInput.Should().BeTrue();
-            entities.Single().axisInput.Should().Be(axis);
+            entity.isInput.Should().BeTrue();
+            entity.hasAxisInput.Should().BeTrue();
+            entity.AxisInput.Should().Be(axis);
         }
         
         public class MockedInput : IInput
