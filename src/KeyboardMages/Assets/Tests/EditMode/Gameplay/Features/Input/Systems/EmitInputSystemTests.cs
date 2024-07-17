@@ -11,7 +11,7 @@ namespace Tests.EditMode.Gameplay.Features.Input.Systems
     public class EmitInputSystemTests
     {
         [Test]
-        public void WhenExecute_ThenShouldAddInputAxisComponent_OnInputEntity_WithInputComponent()
+        public void WhenExecute_AndHasInput_ThenShouldAddInputAxisComponent_OnInputEntity_WithInputComponent()
         {
             // arrange
             var axis = new Vector2(25f, 25f);
