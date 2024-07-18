@@ -16,7 +16,9 @@
     "precompiledReferences": [
         "nunit.framework.dll",
         "FluentAssertions.dll",
-        "Entitas.dll"
+        "Entitas.dll",
+        "Entitas.VisualDebugging.Unity.dll",
+        "Entitas.VisualDebugging.Unity.Editor.dll"
     ],
     "autoReferenced": false,
     "defineConstraints": [
