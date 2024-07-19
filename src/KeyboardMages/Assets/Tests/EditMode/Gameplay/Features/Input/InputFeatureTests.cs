@@ -37,17 +37,5 @@ namespace Tests.EditMode.Gameplay.Features.Input
             entity.hasAxisInput.Should().BeTrue();
             entity.AxisInput.Should().Be(axis);
         }
-        
-        public class MockedInput : IInput
-        {
-            public MockedInput(bool hasAxis, Vector2 axis)
-            {
-                HasAxis = hasAxis;
-                Axis = axis;
-            }
-
-            public bool HasAxis { get; set; }
-            public Vector2 Axis { get; set; }
-        }
     }
 }
