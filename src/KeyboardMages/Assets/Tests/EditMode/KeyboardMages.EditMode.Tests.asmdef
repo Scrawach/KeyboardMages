@@ -18,7 +18,8 @@
         "FluentAssertions.dll",
         "Entitas.dll",
         "Entitas.VisualDebugging.Unity.dll",
-        "Entitas.VisualDebugging.Unity.Editor.dll"
+        "Entitas.VisualDebugging.Unity.Editor.dll",
+        "Moq.dll"
     ],
     "autoReferenced": false,
     "defineConstraints": [
