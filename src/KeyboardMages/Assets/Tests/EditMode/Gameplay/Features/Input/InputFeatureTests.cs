@@ -3,6 +3,7 @@ using CodeBase.Gameplay.Features.Input;
 using CodeBase.Gameplay.Features.Input.Service;
 using CodeBase.Infrastructure.Systems;
 using FluentAssertions;
+using Moq;
 using NUnit.Framework;
 using UnityEngine;
 using Zenject;
@@ -18,8 +19,12 @@ namespace Tests.EditMode.Gameplay.Features.Input
             var container = new DiContainer();
             var contexts = new Contexts();
             var axis = new Vector2(10f, 10f);
-            
-            container.Bind<IInput>().FromInstance(new MockedInput(true, axis));
+
+            var mockedInput = new Mock<IInput>();
+            mockedInput.Setup(input => input.HasAxis).Returns(true);
+            mockedInput.Setup(input => input.Axis).Returns(axis);
+
+            container.Bind<IInput>().FromInstance(mockedInput.Object);
             container.Bind<InputContext>().FromInstance(contexts.input);
 
             var systems = new SystemFactory(container);

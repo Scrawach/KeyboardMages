@@ -1,6 +1,8 @@
 using System.Linq;
+using CodeBase.Gameplay.Features.Input.Service;
 using CodeBase.Gameplay.Features.Input.Systems;
 using FluentAssertions;
+using Moq;
 using NUnit.Framework;
 using UnityEngine;
 
@@ -13,10 +15,14 @@ namespace Tests.EditMode.Gameplay.Features.Input.Systems
         {
             // arrange
             var axis = new Vector2(25f, 25f);
-            var mockedInput = new MockedInput(true, axis);
+            
+            var mockedInput = new Mock<IInput>();
+            mockedInput.Setup(input => input.HasAxis).Returns(true);
+            mockedInput.Setup(input => input.Axis).Returns(axis);
+            
             var contexts = new Contexts();
             
-            var emitInputSystem = new EmitInputSystem(contexts.input, mockedInput);
+            var emitInputSystem = new EmitInputSystem(contexts.input, mockedInput.Object);
             contexts.input.CreateEntity().isInput = true;
 
             // act
@@ -37,15 +43,19 @@ namespace Tests.EditMode.Gameplay.Features.Input.Systems
         {
             // arrange
             var axis = new Vector2(25f, 25f);
-            var mockedInput = new MockedInput(true, axis);
+            
+            var mockedInput = new Mock<IInput>();
+            mockedInput.Setup(input => input.HasAxis).Returns(true);
+            mockedInput.Setup(input => input.Axis).Returns(axis);
+            
             var contexts = new Contexts();
             
-            var emitInputSystem = new EmitInputSystem(contexts.input, mockedInput);
+            var emitInputSystem = new EmitInputSystem(contexts.input, mockedInput.Object);
             contexts.input.CreateEntity().isInput = true;
 
             // act
             emitInputSystem.Execute();
-            mockedInput.HasAxis = false;
+            mockedInput.Setup(input => input.HasAxis).Returns(false);
             emitInputSystem.Execute();
 
             // assert
