@@ -1,3 +1,5 @@
+using CodeBase.Infrastructure.Common;
+using CodeBase.Infrastructure.Common.Scenes;
 using CodeBase.Infrastructure.Systems;
 using Zenject;
 
@@ -8,7 +10,10 @@ namespace CodeBase.Infrastructure.Installers.Bootstrap.Bindings
         public static DiContainer BindInfrastructure(this DiContainer container)
         {
             container.Bind<ISystemFactory>().To<SystemFactory>().AsSingle();
+            container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
             
+            container.BindInterfacesTo<CoroutineRunner>().FromNewComponentOnNewGameObject().AsSingle();
+
             return container;
         }
     }
