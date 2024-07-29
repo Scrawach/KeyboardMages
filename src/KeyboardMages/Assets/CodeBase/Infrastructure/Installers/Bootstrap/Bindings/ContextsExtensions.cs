@@ -4,7 +4,7 @@ namespace CodeBase.Infrastructure.Installers.Bootstrap.Bindings
 {
     public static class ContextsExtensions
     {
-        public static DiContainer BindContexts(this DiContainer container)
+        public static DiContainer BindEntitasContexts(this DiContainer container)
         {
             container.Bind<Contexts>().FromInstance(Contexts.sharedInstance).AsSingle();
             

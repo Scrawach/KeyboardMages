@@ -8,7 +8,7 @@ namespace CodeBase.Infrastructure.Installers.Bootstrap
         public override void InstallBindings()
         {
             Container.BindInputs();
-            Container.BindContexts();
+            Container.BindEntitasContexts();
             Container.BindInfrastructure();
         }
     }
