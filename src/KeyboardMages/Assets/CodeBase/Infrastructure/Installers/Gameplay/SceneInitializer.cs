@@ -1,4 +1,5 @@
 using CodeBase.Gameplay.Features.Cameras.Services;
+using CodeBase.Infrastructure.Installers.Common;
 using UnityEngine;
 using Zenject;
 

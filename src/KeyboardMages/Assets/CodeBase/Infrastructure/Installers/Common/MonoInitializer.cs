@@ -1,7 +1,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace CodeBase.Infrastructure.Installers
+namespace CodeBase.Infrastructure.Installers.Common
 {
     public abstract class MonoInitializer : MonoBehaviour, IInitializable
     {
