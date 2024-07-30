@@ -24,6 +24,7 @@ namespace CodeBase.Gameplay.Features.Hero.Factory
         private GameEntity CreateHero(Vector3 position, HeroConfig config) =>
             _context
                 .CreateEntity()
-                .AddId(_identifiers.Next());
+                .AddId(_identifiers.Next())
+                .AddWorldPosition(position);
     }
 }
