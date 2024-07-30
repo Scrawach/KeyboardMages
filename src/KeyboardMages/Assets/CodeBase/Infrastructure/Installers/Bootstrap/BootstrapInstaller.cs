@@ -8,9 +8,12 @@ namespace CodeBase.Infrastructure.Installers.Bootstrap
         public override void InstallBindings()
         {
             Container.BindInputs();
+            
             Container.BindEntitasContexts();
             Container.BindInfrastructure();
+            
             Container.BindGameplayServices();
+            Container.BindGameplayFactories();
         }
     }
 }

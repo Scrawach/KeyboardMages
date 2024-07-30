@@ -14,9 +14,10 @@ namespace CodeBase.Infrastructure.Installers.Gameplay
         private ILevelDataProvider _levelDataProvider;
 
         [Inject]
-        public void Construct(ICameraProvider provider)
+        public void Construct(ICameraProvider cameraProvider, ILevelDataProvider levelDataProvider)
         {
-            _cameraProvider = provider;
+            _cameraProvider = cameraProvider;
+            _levelDataProvider = levelDataProvider;
         }
         
         public override void Initialize()
