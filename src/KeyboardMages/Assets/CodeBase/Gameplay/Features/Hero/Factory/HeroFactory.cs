@@ -25,6 +25,7 @@ namespace CodeBase.Gameplay.Features.Hero.Factory
             _context
                 .CreateEntity()
                 .AddId(_identifiers.Next())
-                .AddWorldPosition(position);
+                .AddWorldPosition(position)
+                .AddViewPrefab(config.Prefab);
     }
 }
