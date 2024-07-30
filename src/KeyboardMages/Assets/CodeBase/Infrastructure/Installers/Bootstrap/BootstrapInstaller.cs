@@ -10,6 +10,7 @@ namespace CodeBase.Infrastructure.Installers.Bootstrap
             Container.BindInputs();
             Container.BindEntitasContexts();
             Container.BindInfrastructure();
+            Container.BindGameplayServices();
         }
     }
 }
