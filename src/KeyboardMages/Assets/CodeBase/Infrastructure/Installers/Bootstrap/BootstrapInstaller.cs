@@ -11,9 +11,8 @@ namespace CodeBase.Infrastructure.Installers.Bootstrap
             
             Container.BindEntitasContexts();
             Container.BindInfrastructure();
-            
-            Container.BindGameplayServices();
-            Container.BindGameplayFactories();
+
+            Container.BindGameplay();
         }
     }
 }
