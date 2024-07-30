@@ -1,4 +1,5 @@
 using CodeBase.Infrastructure.Common;
+using CodeBase.Infrastructure.Common.Identifiers;
 using CodeBase.Infrastructure.Common.Scenes;
 using CodeBase.Infrastructure.Systems;
 using Zenject;
@@ -11,6 +12,7 @@ namespace CodeBase.Infrastructure.Installers.Bootstrap.Bindings
         {
             container.Bind<ISystemFactory>().To<SystemFactory>().AsSingle();
             container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
+            container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
             
             container.BindInterfacesTo<CoroutineRunner>().FromNewComponentOnNewGameObject().AsSingle();
 
