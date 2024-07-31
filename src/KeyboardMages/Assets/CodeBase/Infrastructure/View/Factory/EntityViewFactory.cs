@@ -7,7 +7,10 @@ namespace CodeBase.Infrastructure.View.Factory
     {
         private readonly IInstantiator _instantiator;
         private readonly Vector3 _farAway = new(999f, 999f, 999f);
-        
+
+        public EntityViewFactory(IInstantiator instantiator) => 
+            _instantiator = instantiator;
+
         public EntityBehaviour CreateView(EntityBehaviour prefab) =>
             _instantiator.InstantiatePrefabForComponent<EntityBehaviour>(
                 prefab,
