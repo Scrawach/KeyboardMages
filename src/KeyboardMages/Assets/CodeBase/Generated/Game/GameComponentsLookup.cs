@@ -8,24 +8,27 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int View = 0;
-    public const int ViewPrefab = 1;
-    public const int Id = 2;
-    public const int WorldPosition = 3;
+    public const int Id = 0;
+    public const int View = 1;
+    public const int ViewPrefab = 2;
+    public const int Transform = 3;
+    public const int WorldPosition = 4;
 
-    public const int TotalComponents = 4;
+    public const int TotalComponents = 5;
 
     public static readonly string[] componentNames = {
+        "Id",
         "View",
         "ViewPrefab",
-        "Id",
+        "Transform",
         "WorldPosition"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(CodeBase.Common.Id),
         typeof(CodeBase.Common.View),
         typeof(CodeBase.Common.ViewPrefab),
-        typeof(CodeBase.Gameplay.Common.Id),
+        typeof(CodeBase.Gameplay.Common.TransformComponent),
         typeof(CodeBase.Gameplay.Common.WorldPosition)
     };
 }
