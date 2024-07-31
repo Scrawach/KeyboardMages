@@ -33,21 +33,21 @@ public sealed partial class InputMatcher {
 //------------------------------------------------------------------------------
 public partial class InputEntity {
 
-    public CodeBase.Gameplay.Features.Input.AxisInput axisInput { get { return (CodeBase.Gameplay.Features.Input.AxisInput)GetComponent(InputComponentsLookup.AxisInput); } }
-    public UnityEngine.Vector2 AxisInput { get { return axisInput.Value; } }
+    public CodeBase.Inputs.AxisInput axisInput { get { return (CodeBase.Inputs.AxisInput)GetComponent(InputComponentsLookup.AxisInput); } }
+    public UnityEngine.Vector3 AxisInput { get { return axisInput.Value; } }
     public bool hasAxisInput { get { return HasComponent(InputComponentsLookup.AxisInput); } }
 
-    public InputEntity AddAxisInput(UnityEngine.Vector2 newValue) {
+    public InputEntity AddAxisInput(UnityEngine.Vector3 newValue) {
         var index = InputComponentsLookup.AxisInput;
-        var component = (CodeBase.Gameplay.Features.Input.AxisInput)CreateComponent(index, typeof(CodeBase.Gameplay.Features.Input.AxisInput));
+        var component = (CodeBase.Inputs.AxisInput)CreateComponent(index, typeof(CodeBase.Inputs.AxisInput));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
     }
 
-    public InputEntity ReplaceAxisInput(UnityEngine.Vector2 newValue) {
+    public InputEntity ReplaceAxisInput(UnityEngine.Vector3 newValue) {
         var index = InputComponentsLookup.AxisInput;
-        var component = (CodeBase.Gameplay.Features.Input.AxisInput)CreateComponent(index, typeof(CodeBase.Gameplay.Features.Input.AxisInput));
+        var component = (CodeBase.Inputs.AxisInput)CreateComponent(index, typeof(CodeBase.Inputs.AxisInput));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: HeroConfig
   m_EditorClassIdentifier: 
   <Prefab>k__BackingField: {fileID: 7735441076969633170, guid: b88c068efe6ea3d59ad87c4fca83566e, type: 3}
+  <Speed>k__BackingField: 5

@@ -1,8 +1,8 @@
 using CodeBase.Gameplay.Features.Hero;
-using CodeBase.Gameplay.Features.Input;
 using CodeBase.Gameplay.Features.Movement;
 using CodeBase.Infrastructure.Systems;
 using CodeBase.Infrastructure.View;
+using CodeBase.Inputs;
 
 namespace CodeBase.Gameplay
 {

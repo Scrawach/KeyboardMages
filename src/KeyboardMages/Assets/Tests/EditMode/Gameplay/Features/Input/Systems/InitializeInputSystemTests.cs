@@ -1,5 +1,5 @@
 using System.Linq;
-using CodeBase.Gameplay.Features.Input.Systems;
+using CodeBase.Inputs.Systems;
 using FluentAssertions;
 using NUnit.Framework;
 

@@ -6,19 +6,19 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public sealed partial class InputMatcher {
+public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<InputEntity> _matcherInput;
+    static Entitas.IMatcher<GameEntity> _matcherHero;
 
-    public static Entitas.IMatcher<InputEntity> Input {
+    public static Entitas.IMatcher<GameEntity> Hero {
         get {
-            if (_matcherInput == null) {
-                var matcher = (Entitas.Matcher<InputEntity>)Entitas.Matcher<InputEntity>.AllOf(InputComponentsLookup.Input);
-                matcher.componentNames = InputComponentsLookup.componentNames;
-                _matcherInput = matcher;
+            if (_matcherHero == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Hero);
+                matcher.componentNames = GameComponentsLookup.componentNames;
+                _matcherHero = matcher;
             }
 
-            return _matcherInput;
+            return _matcherHero;
         }
     }
 }
@@ -31,20 +31,20 @@ public sealed partial class InputMatcher {
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public partial class InputEntity {
+public partial class GameEntity {
 
-    static readonly CodeBase.Inputs.Input inputComponent = new CodeBase.Inputs.Input();
+    static readonly CodeBase.Gameplay.Features.Hero.Hero heroComponent = new CodeBase.Gameplay.Features.Hero.Hero();
 
-    public bool isInput {
-        get { return HasComponent(InputComponentsLookup.Input); }
+    public bool isHero {
+        get { return HasComponent(GameComponentsLookup.Hero); }
         set {
-            if (value != isInput) {
-                var index = InputComponentsLookup.Input;
+            if (value != isHero) {
+                var index = GameComponentsLookup.Hero;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : inputComponent;
+                            : heroComponent;
 
                     AddComponent(index, component);
                 } else {

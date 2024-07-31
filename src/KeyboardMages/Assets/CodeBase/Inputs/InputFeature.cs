@@ -1,7 +1,7 @@
-using CodeBase.Gameplay.Features.Input.Systems;
 using CodeBase.Infrastructure.Systems;
+using CodeBase.Inputs.Systems;
 
-namespace CodeBase.Gameplay.Features.Input
+namespace CodeBase.Inputs
 {
     public class InputFeature : GenericFeature
     {

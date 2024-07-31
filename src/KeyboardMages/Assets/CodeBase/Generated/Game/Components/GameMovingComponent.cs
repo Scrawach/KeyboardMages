@@ -6,19 +6,19 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public sealed partial class InputMatcher {
+public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<InputEntity> _matcherInput;
+    static Entitas.IMatcher<GameEntity> _matcherMoving;
 
-    public static Entitas.IMatcher<InputEntity> Input {
+    public static Entitas.IMatcher<GameEntity> Moving {
         get {
-            if (_matcherInput == null) {
-                var matcher = (Entitas.Matcher<InputEntity>)Entitas.Matcher<InputEntity>.AllOf(InputComponentsLookup.Input);
-                matcher.componentNames = InputComponentsLookup.componentNames;
-                _matcherInput = matcher;
+            if (_matcherMoving == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Moving);
+                matcher.componentNames = GameComponentsLookup.componentNames;
+                _matcherMoving = matcher;
             }
 
-            return _matcherInput;
+            return _matcherMoving;
         }
     }
 }
@@ -31,20 +31,20 @@ public sealed partial class InputMatcher {
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-public partial class InputEntity {
+public partial class GameEntity {
 
-    static readonly CodeBase.Inputs.Input inputComponent = new CodeBase.Inputs.Input();
+    static readonly CodeBase.Gameplay.Features.Movement.Moving movingComponent = new CodeBase.Gameplay.Features.Movement.Moving();
 
-    public bool isInput {
-        get { return HasComponent(InputComponentsLookup.Input); }
+    public bool isMoving {
+        get { return HasComponent(GameComponentsLookup.Moving); }
         set {
-            if (value != isInput) {
-                var index = InputComponentsLookup.Input;
+            if (value != isMoving) {
+                var index = GameComponentsLookup.Moving;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : inputComponent;
+                            : movingComponent;
 
                     AddComponent(index, component);
                 } else {

@@ -7,6 +7,7 @@ namespace CodeBase.Gameplay.Features.Movement
     {
         public MovementFeature(ISystemFactory systems) : base(systems)
         {
+            Add<DirectionalDeltaMoveSystem>();
             Add<UpdateTransformPositionSystem>();
         }
     }

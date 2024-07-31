@@ -1,3 +1,4 @@
+using CodeBase.Gameplay.Common.Time;
 using CodeBase.Gameplay.Features.Cameras.Services;
 using CodeBase.Gameplay.Features.Hero.Factory;
 using CodeBase.Gameplay.Features.Hero.StaticData;
@@ -23,6 +24,7 @@ namespace CodeBase.Infrastructure.Installers.Bootstrap.Bindings
         {
             container.Bind<ICameraProvider>().To<CameraProvider>().AsSingle();
             container.Bind<ILevelDataProvider>().To<LevelDataProvider>().AsSingle();
+            container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
 
             return container;
         }

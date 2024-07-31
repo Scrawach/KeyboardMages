@@ -1,7 +1,7 @@
-using CodeBase.Gameplay.Features.Input.Service;
+using CodeBase.Inputs.Service;
 using Entitas;
 
-namespace CodeBase.Gameplay.Features.Input.Systems
+namespace CodeBase.Inputs.Systems
 {
     public class EmitInputSystem : IExecuteSystem
     {

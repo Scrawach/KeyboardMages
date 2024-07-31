@@ -1,7 +1,7 @@
 using System.Linq;
-using CodeBase.Gameplay.Features.Input;
-using CodeBase.Gameplay.Features.Input.Service;
 using CodeBase.Infrastructure.Systems;
+using CodeBase.Inputs;
+using CodeBase.Inputs.Service;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;

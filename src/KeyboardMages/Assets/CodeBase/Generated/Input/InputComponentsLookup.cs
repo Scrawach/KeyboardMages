@@ -19,7 +19,7 @@ public static class InputComponentsLookup {
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(CodeBase.Gameplay.Features.Input.AxisInput),
-        typeof(CodeBase.Gameplay.Features.Input.Input)
+        typeof(CodeBase.Inputs.AxisInput),
+        typeof(CodeBase.Inputs.Input)
     };
 }

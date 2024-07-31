@@ -7,5 +7,6 @@ namespace CodeBase.Gameplay.Features.Hero.Configs
     public class HeroConfig : ScriptableObject
     {
         [field: SerializeField] public EntityBehaviour Prefab { get; private set; }
+        [field: SerializeField] public float Speed { get; private set; }
     }
 }

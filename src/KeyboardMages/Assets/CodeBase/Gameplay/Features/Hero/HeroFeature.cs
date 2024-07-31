@@ -8,6 +8,9 @@ namespace CodeBase.Gameplay.Features.Hero
         public HeroFeature(ISystemFactory systems) : base(systems)
         {
             Add<InitializeHeroSystem>();
+
+            Add<SetMovingByAxisInput>();
+            Add<SetHeroDirectionByInputSystem>();
         }
     }
 }

@@ -1,3 +1,4 @@
+using CodeBase.Common.Extensions;
 using CodeBase.Gameplay.Features.Hero.Configs;
 using CodeBase.Gameplay.Features.Hero.StaticData;
 using CodeBase.Infrastructure.Common.Identifiers;
@@ -26,6 +27,8 @@ namespace CodeBase.Gameplay.Features.Hero.Factory
                 .CreateEntity()
                 .AddId(_identifiers.Next())
                 .AddWorldPosition(position)
-                .AddViewPrefab(config.Prefab);
+                .AddViewPrefab(config.Prefab)
+                .AddSpeed(config.Speed)
+                .With(entity => entity.isHero = true);
     }
 }

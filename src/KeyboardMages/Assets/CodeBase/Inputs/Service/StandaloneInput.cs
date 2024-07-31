@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace CodeBase.Gameplay.Features.Input.Service
+namespace CodeBase.Inputs.Service
 {
     public class StandaloneInput : IInput
     {

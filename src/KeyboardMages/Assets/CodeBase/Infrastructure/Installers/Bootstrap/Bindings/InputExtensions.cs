@@ -1,4 +1,4 @@
-using CodeBase.Gameplay.Features.Input.Service;
+using CodeBase.Inputs.Service;
 using Zenject;
 
 namespace CodeBase.Infrastructure.Installers.Bootstrap.Bindings
