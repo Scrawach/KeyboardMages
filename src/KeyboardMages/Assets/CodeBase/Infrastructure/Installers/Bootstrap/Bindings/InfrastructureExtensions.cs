@@ -12,22 +12,28 @@ namespace CodeBase.Infrastructure.Installers.Bootstrap.Bindings
     {
         public static DiContainer BindInfrastructure(this DiContainer container) =>
             container
-                .BindInfrastructureServices()
-                .BindInfrastructureFactories();
+                .BindCoroutineRunner()
+                .BindServices()
+                .BindFactories();
 
-        private static DiContainer BindInfrastructureServices(this DiContainer container)
+        private static DiContainer BindCoroutineRunner(this DiContainer container)
+        {
+            container.BindInterfacesTo<CoroutineRunner>().FromNewComponentOnNewGameObject().AsSingle();
+            
+            return container;
+        }
+        
+        private static DiContainer BindServices(this DiContainer container)
         {
             container.Bind<ISystemFactory>().To<SystemFactory>().AsSingle();
             container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
             container.Bind<IIdentifierService>().To<IdentifierService>().AsSingle();
             container.Bind<IAssets>().To<Assets>().AsSingle();
             
-            container.BindInterfacesTo<CoroutineRunner>().FromNewComponentOnNewGameObject().AsSingle();
-
             return container;
         }
 
-        private static DiContainer BindInfrastructureFactories(this DiContainer container)
+        private static DiContainer BindFactories(this DiContainer container)
         {
             container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
             
